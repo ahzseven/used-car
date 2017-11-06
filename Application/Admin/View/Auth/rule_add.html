@@ -1,0 +1,81 @@
+<extend name="./Application/Admin/View/Layout/application.html"/>
+
+<block name="content">
+    <!-- content start -->
+
+    <div class="admin-content-body">
+        <div class="am-cf am-padding am-padding-bottom-0">
+            <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">添加权限菜单</strong> / <small>Add Rule</small></div>
+        </div>
+
+        <hr>
+
+        <div class="am-g">
+            <div id="alert-danger" class="am-alert am-alert-danger" data-am-alert style="display: none;">
+            </div>
+            <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-12">
+                <form id="form-register" class="am-form am-form-horizontal" action="" method="post">
+                    <div class="am-form-group">
+                        <label for="user-name" class="am-u-sm-3 am-form-label">顶级菜单</label>
+                        <div class="am-u-sm-9">
+                            <select id="user-name" name="parent_id" data-am-selected="{btnWidth: '100%', btnSize: 'sm', btnStyle: 'secondary'}">
+                                <volist name="list" id="vo">
+                                    <option value="{{$vo.id}}">{{$vo.title}}</option>
+                                    <volist name="vo.children" id="v">
+                                        <option value="{{$v.id}}">　　{{$v.title}}</option>
+                                    </volist>
+                                </volist>
+                            </select>
+                            <!--<input type="text" id="user-name" placeholder="Name" name="name" minlength="4" required>-->
+                        </div>
+                    </div>
+
+                    <div class="am-form-group">
+                        <label for="user-email" class="am-u-sm-3 am-form-label">菜单图标</label>
+                        <div class="am-u-sm-9">
+                            <input type="text" id="user-email" placeholder="Icon" name="icon">
+                        </div>
+                    </div>
+
+                    <div class="am-form-group">
+                        <label for="user-phone" class="am-u-sm-3 am-form-label">菜单名称</label>
+                        <div class="am-u-sm-9">
+                            <input type="text" id="user-phone" placeholder="Name" name="name" required>
+                        </div>
+                    </div>
+
+                    <div class="am-form-group">
+                        <label for="user-QQ" class="am-u-sm-3 am-form-label">菜单标题</label>
+                        <div class="am-u-sm-9">
+                            <input type="text" id="user-QQ" placeholder="Title" name="title" required>
+                        </div>
+                    </div>
+
+
+                    <div class="am-form-group">
+                        <div class="am-u-sm-9 am-u-sm-push-3">
+                            <button type="submit" class="am-btn am-btn-primary">提交保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- content end -->
+</block>
+
+<block name="js">
+    <script src="__PUBLIC__/assets/vendor/validation/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/assets/vendor/validation/localization/messages_zh.js"></script>
+    <script>
+        // 验证 表单
+        $().ready(function() {
+            $("#form-register").validate({
+                onfocusout: function (element) {
+                    $(element).valid();
+                }
+            });
+        });
+    </script>
+</block>

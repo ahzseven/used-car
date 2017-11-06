@@ -1,0 +1,72 @@
+[ 2017-11-06T11:35:18+08:00 ] 127.0.0.1 /Admin/Auth/rule_add
+ERR: Think\Controller:getList2方法不存在！
+
+[ 2017-11-06T12:18:12+08:00 ] 127.0.0.1 /Admin/Auth/rule_add
+ERR: XML标签语法错误 : name="<?php echo ($v["id"]); ?
+
+[ 2017-11-06T12:27:18+08:00 ] 127.0.0.1 /Admin/Auth/register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000960s ]
+ERR: 非法操作:register
+
+[ 2017-11-06T12:28:20+08:00 ] 127.0.0.1 /Admin/Auth/register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000868s ]
+ERR: 非法操作:register
+
+[ 2017-11-06T12:40:00+08:00 ] 127.0.0.1 /Admin/Auth/rule_add
+ERR: 1364:Field 'parent_id' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `auth_rule` (`icon`,`name`,`title`) VALUES ('ege','ehre','sehrt')
+
+[ 2017-11-06T12:42:07+08:00 ] 127.0.0.1 /Admin/Auth/rule_add
+ERR: 1364:Field 'parent_id' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `auth_rule` (`icon`,`name`,`title`) VALUES ('ege','ehre','sehrt')
+
+[ 2017-11-06T12:42:12+08:00 ] 127.0.0.1 /Admin/Auth/rule_add
+ERR: 1364:Field 'parent_id' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `auth_rule` (`icon`,`name`,`title`) VALUES ('wt','q3t','qt444')
+
+[ 2017-11-06T12:52:11+08:00 ] 127.0.0.1 /Admin/Auth/rule_add
+ERR: 1062:Duplicate entry 'waeg' for key 'name'
+ [ SQL语句 ] : INSERT INTO `auth_rule` (`parent_id`,`icon`,`name`,`title`) VALUES ('4','wew','waeg','排序')
+
+[ 2017-11-06T12:52:17+08:00 ] 127.0.0.1 /Admin/Auth/rule_add
+ERR: 1062:Duplicate entry 'waeg' for key 'name'
+ [ SQL语句 ] : INSERT INTO `auth_rule` (`parent_id`,`icon`,`name`,`title`) VALUES ('4','wew','waeg','排序')
+
+[ 2017-11-06T12:52:40+08:00 ] 127.0.0.1 /Admin/Auth/rule_add
+ERR: 1062:Duplicate entry 'aweg' for key 'name'
+ [ SQL语句 ] : INSERT INTO `auth_rule` (`parent_id`,`icon`,`name`,`title`) VALUES ('1','we','aweg','aweg')
+
+[ 2017-11-06T12:52:49+08:00 ] 127.0.0.1 /Admin/Auth/rule_add
+ERR: 1062:Duplicate entry 'aweg' for key 'name'
+ [ SQL语句 ] : INSERT INTO `auth_rule` (`parent_id`,`icon`,`name`,`title`) VALUES ('1','we','aweg','aweg')
+
+[ 2017-11-06T12:52:55+08:00 ] 127.0.0.1 /Admin/Auth/rule_add
+ERR: 1364:Field 'parent_id' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `auth_rule` (`icon`,`name`,`title`) VALUES ('wagw','we','arer')
+
+[ 2017-11-06T12:54:01+08:00 ] 127.0.0.1 /Admin/Auth/rule_add
+ERR: 1364:Field 'parent_id' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `auth_rule` (`icon`,`name`,`title`) VALUES ('wagw','we','arer')
+
+[ 2017-11-06T12:54:12+08:00 ] 127.0.0.1 /Admin/Auth/rule_add
+ERR: 1364:Field 'parent_id' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `auth_rule` (`icon`,`name`,`title`) VALUES ('wt','q3t','qt444')
+
+[ 2017-11-06T12:54:36+08:00 ] 127.0.0.1 /Admin/Auth/rule_add
+ERR: 1364:Field 'parent_id' doesn't have a default value
+ [ SQL语句 ] : INSERT INTO `auth_rule` (`icon`,`name`,`title`) VALUES ('wt','q3t','qt444')
+
+[ 2017-11-06T22:09:31+08:00 ] 127.0.0.1 /Admin/Auth/group_store
+ERR: Think\Controller:data方法不存在！
+
+[ 2017-11-06T22:11:37+08:00 ] 127.0.0.1 /Admin/Auth/group_store
+ERR: Think\Controller:data方法不存在！
+
+[ 2017-11-06T22:19:37+08:00 ] 127.0.0.1 /Admin/Auth/group_store
+ERR: 1048:Column 'title' cannot be null
+ [ SQL语句 ] : INSERT INTO `auth_group` (`rules`,`title`) VALUES ('1,2,16',NULL)
+

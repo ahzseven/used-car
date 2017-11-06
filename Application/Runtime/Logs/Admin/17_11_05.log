@@ -1,0 +1,15 @@
+[ 2017-11-05T00:01:10+08:00 ] 127.0.0.1 /Admin/Auth/rule_index
+ERR: Think\Controller:getList方法不存在！
+
+[ 2017-11-05T01:57:47+08:00 ] 127.0.0.1 /Admin/Auth/rule_index
+ERR: syntax error, unexpected '{'
+
+[ 2017-11-05T01:58:08+08:00 ] 127.0.0.1 /Admin/Auth/rule_index
+ERR: XML标签语法错误 : name="<?php echo ($list["son"]); ?
+
+[ 2017-11-05T01:59:48+08:00 ] 127.0.0.1 /Admin/Auth/rule_index
+ERR: XML标签语法错误 : name="<?php echo ($list["son"]); ?
+
+[ 2017-11-05T03:27:02+08:00 ] 127.0.0.1 /Admin/Auth/rule_index
+ERR: Too few arguments to function Admin\Controller\AuthController::getList(), 1 passed in C:\laragon\www\car\Application\Admin\Controller\AuthController.class.php on line 17 and exactly 5 expected
+

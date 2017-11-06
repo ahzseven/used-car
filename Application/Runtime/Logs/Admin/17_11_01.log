@@ -1,0 +1,38 @@
+[ 2017-11-01T19:37:55+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000701s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008723s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008846s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000454s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000506s ]
+
+[ 2017-11-01T22:43:45+08:00 ] 127.0.0.1 /admin/user/assets/css/amazeui.min.css
+ERR: 非法操作:assets
+
+[ 2017-11-01T23:11:43+08:00 ] 127.0.0.1 /admin/user/%7B/Admin/User/verify%7D
+ERR: 非法操作:{
+
+[ 2017-11-01T23:18:30+08:00 ] 127.0.0.1 /admin/user/%7B/Admin/User/verify%7D
+ERR: 非法操作:{
+
+[ 2017-11-01T23:18:32+08:00 ] 127.0.0.1 /admin/user/%7B/Admin/User/verify%7D
+ERR: 非法操作:{
+
+[ 2017-11-01T23:21:26+08:00 ] 127.0.0.1 /admin/user/%7B/Admin/User/verify%7D
+ERR: 非法操作:{
+
+[ 2017-11-01T23:21:57+08:00 ] 127.0.0.1 /admin/user/%7B/Admin/User/verify%7D
+ERR: 非法操作:{
+
