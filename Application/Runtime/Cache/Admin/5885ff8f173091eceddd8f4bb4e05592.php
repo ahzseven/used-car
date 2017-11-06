@@ -100,7 +100,7 @@
 
     <div class="admin-content-body">
         <div class="am-cf am-padding am-padding-bottom-0">
-            <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">表格</strong> / <small>Table</small></div>
+            <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">权限菜单列表</strong> / <small>Rule List</small></div>
         </div>
 
         <hr>
@@ -146,7 +146,7 @@
                                 <td><input type="checkbox"></td>
                                 <td><?php echo ($list["id"]); ?></td>
                                 <td><a href="#"><?php echo ($list["name"]); ?></a></td>
-                                <td><?php echo ($list["title"]); ?></td>
+                                <td style="color: red;font-weight: bold"><?php echo ($list["title"]); ?></td>
                                 <td class="am-hide-sm-only"><?php echo ($list["sort"]); ?></td>
                                 <td class="am-hide-sm-only"><?php echo ($list["status"]); ?></td>
                                 <td>
@@ -164,7 +164,7 @@
                                 <td><input type="checkbox"></td>
                                 <td><?php echo ($children["id"]); ?></td>
                                 <td><a href="#"><?php echo ($children["name"]); ?></a></td>
-                                <td>　　<?php echo ($children["title"]); ?></td>
+                                <td style="color: deepskyblue;font-weight: bold">　　<?php echo ($children["title"]); ?></td>
                                 <td class="am-hide-sm-only"><?php echo ($children["sort"]); ?></td>
                                 <td class="am-hide-sm-only"><?php echo ($children["status"]); ?></td>
                                 <td>
@@ -182,7 +182,7 @@
                                         <td><input type="checkbox"></td>
                                         <td><?php echo ($child["id"]); ?></td>
                                         <td><a href="#"><?php echo ($child["name"]); ?></a></td>
-                                        <td>　　　　<?php echo ($child["title"]); ?></td>
+                                        <td style="color: #1b961b;">　　　　<?php echo ($child["title"]); ?></td>
                                         <td class="am-hide-sm-only"><?php echo ($child["sort"]); ?></td>
                                         <td class="am-hide-sm-only"><?php echo ($child["status"]); ?></td>
                                         <td>

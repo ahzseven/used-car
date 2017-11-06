@@ -100,7 +100,7 @@
 
     <div class="admin-content-body">
         <div class="am-cf am-padding am-padding-bottom-0">
-            <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">表格</strong> / <small>Table</small></div>
+            <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">用户组列表</strong> / <small>Group List</small></div>
         </div>
 
         <hr>
@@ -133,22 +133,16 @@
                         <tr>
                             <th class="table-check"><input type="checkbox"></th>
                             <th class="table-id">ID</th>
-                            <th class="table-title">NAME</th>
-                            <th class="table-type">EMAIL</th>
-                            <th class="table-author am-hide-sm-only">手机</th>
-                            <th class="table-date am-hide-sm-only">修改日期</th>
+                            <th class="table-title">TITLE</th>
                             <th class="table-set">操作</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><tr>
+                        <?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$list): $mod = ($i % 2 );++$i;?><tr>
                                 <td><input type="checkbox"></td>
-                                <td><?php echo ($data["id"]); ?></td>
-                                <td><a href="#"><?php echo ($data["name"]); ?></a></td>
-                                <td><?php echo ($data["email"]); ?></td>
-                                <td class="am-hide-sm-only"><?php echo ($data["phone"]); ?></td>
-                                <td class="am-hide-sm-only"><?php echo (date("Y-m-d H:i:s",$data["updated_at"])); ?></td>
+                                <td><?php echo ($list["id"]); ?></td>
+                                <td><a href="#"><?php echo ($list["title"]); ?></a></td>
                                 <td>
                                     <div class="am-btn-toolbar">
                                         <div class="am-btn-group am-btn-group-xs">

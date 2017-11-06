@@ -99,6 +99,8 @@ class AuthController extends Controller
     // 用户组管理列表
     public function group_index()
     {
+        $lists = M("AuthGroup")->select();
+        $this->assign("lists", $lists);
         $this->display();
     }
 

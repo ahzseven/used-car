@@ -31,12 +31,12 @@
             <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning">5</span></a></li>
             <li class="am-dropdown" data-am-dropdown>
                 <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-                    <span class="am-icon-users"></span> 管理员 <span class="am-icon-caret-down"></span>
+                    <span class="am-icon-user"></span> 管理员  <?php echo $_SESSION['user']['name'] ?> <span class="am-icon-caret-down"></span>
                 </a>
                 <ul class="am-dropdown-content">
                     <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
                     <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
-                    <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+                    <li><a href="<?php echo U('User/logout');?>"><span class="am-icon-power-off"></span> 退出</a></li>
                 </ul>
             </li>
             <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
@@ -64,14 +64,14 @@
             <li class="admin-parent">
                 <a class="am-cf" data-am-collapse="{target: '#collapse-nav-1'}"><span class="am-icon-file"></span> 系统管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
                 <ul class="am-list am-collapse admin-sidebar-sub" id="collapse-nav-1">
-                    <li><a href="admin-gallery.html"><span class="am-icon-th"></span> 权限管理<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
-                    <li><a href="admin-log.html"><span class="am-icon-calendar"></span> 用户组管理</a></li>
+                    <li><a href="<?php echo U('Admin/Auth/rule_index');?>"><span class="am-icon-th"></span> 权限管理<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
+                    <li><a href="<?php echo U('Admin/Auth/group_index');?>"><span class="am-icon-calendar"></span> 用户组管理</a></li>
                     <li><a href="<?php echo U('Admin/User/index');?>"><span class="am-icon-bug"></span> 用户管理</a></li>
                 </ul>
             </li>
-            <li><a href="admin-table.html"><span class="am-icon-table"></span> 表格</a></li>
-            <li><a href="admin-form.html"><span class="am-icon-pencil-square-o"></span> 表单</a></li>
-            <li><a href="#"><span class="am-icon-sign-out"></span> 注销</a></li>
+            <!--<li><a href="admin-table.html"><span class="am-icon-table"></span> 表格</a></li>-->
+            <!--<li><a href="admin-form.html"><span class="am-icon-pencil-square-o"></span> 表单</a></li>-->
+            <!--<li><a href="#"><span class="am-icon-sign-out"></span> 注销</a></li>-->
         </ul>
 
         <div class="am-panel am-panel-default admin-sidebar-panel">
