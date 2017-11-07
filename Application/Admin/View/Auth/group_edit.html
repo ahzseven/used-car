@@ -1,0 +1,146 @@
+<extend name="./Application/Admin/View/Layout/application.html"/>
+
+<block name="content">
+    <!-- content start -->
+
+    <div class="admin-content-body">
+        <div class="am-cf am-padding">
+            <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">编辑用户组</strong> /
+                <small>Edit Role</small>
+            </div>
+        </div>
+
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-12">
+
+                <div class="am-tab-panel">
+                    <form class="am-form " action="{{:U('Admin/Auth/group_update')}}" method="post">
+                        <input type="hidden" name="id" value="{{$id}}">
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                                用户组名
+                            </div>
+                            <div class="am-u-sm-8 am-u-md-4 am-u-end col-end">
+                                <input type="text" class="am-input-sm" name="title" placeholder="请输入用户组名">
+                            </div>
+                        </div>
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                                权限列表
+                            </div>
+
+                            <div class="am-u-sm-8 am-u-md-8 am-u-end col-end">
+
+                                <volist name="lists" id="list">
+                                    <div class="am-panel am-panel-default">
+
+
+                                        <div class="am-panel-hd">
+                                            <label class="am-checkbox-inline am-danger">
+                                                <input data-am-ucheck="" type="checkbox" value="{{$list.id}}" name="rule_id[]" class="permission1 am-ucheck-checkbox" <in name="list.id" value="$rules">checked</in>><span class="am-ucheck-icons"><i class="am-icon-unchecked"></i><i class="am-icon-checked"></i></span><span class="am-ucheck-icons"><i class="am-icon-unchecked"></i><i class="am-icon-checked"></i></span>
+                                                <span class="am-badge am-badge-secondary am-text-sm am-radius">{{$list.title}}</span>
+                                            </label>
+                                        </div>
+
+
+                                        <volist name="list.son" id="vo">
+                                            <div class="am-panel-bd">
+                                                <div class="am-g am-margin-top ">
+                                                    <div class="am-u-sm-4 am-u-md-3 am-text-right permission-div2">
+                                                        <label class="am-checkbox-inline am-danger">
+                                                            <input data-am-ucheck="" type="checkbox" value="{{$vo.id}}" name="rule_id[]" class="permission2 am-ucheck-checkbox" <in name="vo.id" value="$rules">checked</in>><span class="am-ucheck-icons"><i class="am-icon-unchecked"></i><i class="am-icon-checked"></i></span><span class="am-ucheck-icons"><i class="am-icon-unchecked"></i><i class="am-icon-checked"></i></span>
+                                                            <span class="am-badge am-badge-success am-radius">{{$vo.title}}</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="am-u-sm-8 am-u-md-9 am-u-end col-end permission-div3">
+
+                                                        <volist name="vo.son" id="child">
+                                                            <label class="am-checkbox-inline  am-danger">
+                                                                <input data-am-ucheck="" type="checkbox" value="{{$child.id}}" class="permissions3 am-ucheck-checkbox" name="rule_id[]" <in name="child.id" value="$rules">checked</in>><span class="am-ucheck-icons"><i class="am-icon-unchecked"></i><i class="am-icon-checked"></i></span>
+                                                                {{$child.title}}
+                                                            </label>
+                                                        </volist>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </volist>
+
+                                    </div>
+                                </volist>
+
+                            </div>
+                        </div>
+
+                        <div class="am-margin">
+                            <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- content end -->
+</block>
+
+<block name="js">
+    <script src="__PUBLIC__/assets/vendor/validation/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/assets/vendor/validation/localization/messages_zh.js"></script>
+    <script>
+        $(function () {
+            /**
+             * 一级分类选中,所属之类都选中
+             */
+            $('.permission1').click(function(){
+                var checked = $(this).prop('checked');
+                $(this).parents('.am-panel-hd').next().find('input').prop('checked', checked);
+            });
+
+            $('.permission2').click(function(){
+                var checked = $(this).prop('checked');
+                $(this).parents('.permission-div2').next().find('input').prop('checked', checked);
+
+                //如果所有子类全部选中,自动选中所属一级分类
+                var $body  = $(this).parents('.am-panel-bd');
+                $panel = $(this).parents('.am-panel');
+                length_checked = $body.find('.permission2:checked').length;
+                //一个子类被选中,所属一级分类自动选中
+                if (length_checked > 0) {
+                    $panel.find('.permission1').prop('checked', true);
+                } else {
+                    $panel.find('.permission1').prop('checked', false);
+                }
+            });
+
+            //三级子类被选中,自动选中一级和二级分类
+            $('.permission3').click(function(){
+                var $permission_div3 = $(this).parents('.permission-div3');
+                $permission_div2 = $permission_div3.siblings('.permission-div2');
+                $body = $(this).parents('.am-panel-bd');
+                $panel = $(this).parents('.am-panel');
+
+                length3_checked = $permission_div3.find("input:checked").length;
+                //一个三级被选中,自动选中二级
+                if (length3_checked > 0) {
+                    $permission_div2.find('.permission2').prop('checked', true);
+                } else {
+                    $permission_div2.find('.permission2').prop('checked', false);
+                }
+
+                //一个二级被选中,自动选中一级
+                length2_checked = $body.find('.permission2:checked').length;
+                if (length2_checked > 0) {
+                    $panel.find('.permisssion1').prop('checked', true);
+                } else {
+                    $panel.find('.permisssion1').prop('checked', false);
+                }
+            });
+
+
+        });
+    </script>
+</block>

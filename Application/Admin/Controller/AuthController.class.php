@@ -5,14 +5,16 @@ namespace Admin\Controller;
 use Think\Controller;
 use Think\Auth;
 
-class AuthController extends Controller
+class AuthController extends CommonController
 {
     public $rule;
+    public $group;
 
     public function __construct()
     {
         parent::__construct();
         $this->rule = D("AuthRule");
+        $this->group = M("AuthGroup");
 //        $this->lists = D("AuthRule")->order("sort asc")->select();
     }
 
@@ -99,18 +101,20 @@ class AuthController extends Controller
     // 用户组管理列表
     public function group_index()
     {
-        $lists = M("AuthGroup")->select();
+        $lists = $this->group->select();
         $this->assign("lists", $lists);
+
         $this->display();
     }
 
     // 增加用户组
     public function group_add()
     {
+        // 权限列表
         $data = $this->rule->order("sort asc")->select();
         $lists = $this->getList($data);
-
         $this->assign('lists', $lists);
+
         $this->display();
     }
 
@@ -122,16 +126,44 @@ class AuthController extends Controller
             $data['rules'] = implode(",", $rules);
             $data['title'] = $_POST['title'];
 
-            M("AuthGroup")->data($data)->add();
+            $this->group->data($data)->add();
 
             $this->success("新增用户组成功", U("Auth/group_index"));
         }
     }
 
-    // 编辑用户组
+    // 编辑用户组权限
     public function group_edit()
     {
+        // 权限列表
+        $data = $this->rule->order("sort asc")->select();
+        $lists = $this->getList($data);
+        $this->assign('lists', $lists);
+
+        if (IS_GET) {
+            $id = I("get.id");
+            $data = $this->group->find($id);
+            $rules = explode(",", $data['rules']);   // 拆分为一个数组
+            $this->assign("rules", $rules);
+            $this->assign("id", $id);
+        }
+
         $this->display();
+    }
+
+    // 更新用户组权限
+    public function group_update()
+    {
+        if (IS_POST) {
+            $rules = $_POST['rule_id'];
+            $data['id'] = $_POST['id'];
+            $data['rules'] = implode(",", $rules);  // 逗号拼接成字符串
+            $data['title'] = $_POST['title'];
+
+            $this->group->save($data);
+
+            $this->success("编辑用户组成功", U("Auth/group_index"));
+        }
     }
 
     // 删除用户组

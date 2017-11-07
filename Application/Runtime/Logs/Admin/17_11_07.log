@@ -1,0 +1,33 @@
+[ 2017-11-07T11:20:43+08:00 ] 127.0.0.1 /Admin/Auth/group_edit/id/4
+ERR: syntax error, unexpected 'BETWEEN' (T_STRING)
+
+[ 2017-11-07T12:07:38+08:00 ] 127.0.0.1 /Admin/Auth/group_edit/id/6
+ERR: syntax error, unexpected '<', expecting variable (T_VARIABLE) or '{' or '$'
+
+[ 2017-11-07T12:08:41+08:00 ] 127.0.0.1 /Admin/Auth/group_edit/id/6
+ERR: syntax error, unexpected '<', expecting variable (T_VARIABLE) or '{' or '$'
+
+[ 2017-11-07T13:22:33+08:00 ] 127.0.0.1 /Admin/User/check_verify?code=76
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000902s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001596s ]
+
+[ 2017-11-07T13:22:33+08:00 ] 127.0.0.1 /Admin/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000918s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `login_failed` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `login_failed` WHERE ( email = 'admin@qq.com' and ip = '127.0.0.1' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `user` WHERE `email` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000778s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000842s ]
+
+[ 2017-11-07T13:22:33+08:00 ] 127.0.0.1 /Admin/Index/index
+ERR: 1054:Unknown column 'uid' in 'field list'
+ [ SQL语句 ] : SELECT `uid`,`group_id`,`title`,`rules` FROM auth_group_access a INNER JOIN auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' ) 
+
+[ 2017-11-07T13:40:12+08:00 ] 127.0.0.1 /Admin/Index/index
+ERR: 系统不支持:memcached
+
