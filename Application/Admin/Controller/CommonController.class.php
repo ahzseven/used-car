@@ -20,13 +20,18 @@ class CommonController extends Controller
         // 获取当前的模型 / 控制器 / 方法
         $name = MODULE_NAME . '/' . CONTROLLER_NAME . '/' . ACTION_NAME;
 
-        // 验证当前用户权限
-        if (!$auth->check($name, $user['id'])) {
-            $this->error('你没有权限访问, 请与管理员联系!!');
-        }
+        /**
+         * 验证当前用户权限
+         * 若为超级管理员不用验证
+         */
 
-        // 返回用户菜单列表
-        $this->menus();
+            if (!$auth->check($name, $user['id'])) {
+                $this->error('你没有权限访问, 请与管理员联系!!');
+            }
+
+        // 返回用户菜单列表,模板直接输出
+        $menus = $this->menus();
+        $this->assign("menus", $menus);
     }
 
     private function menus()
@@ -54,10 +59,10 @@ class CommonController extends Controller
             }
             S($cache_name, $menus);
         }
-
+//        var_dump($menus);
+        return $menus;
         return S($cache_name);
     }
-
 
 
 }

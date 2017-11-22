@@ -1,0 +1,21 @@
+[ 2017-11-09T14:50:05+08:00 ] 127.0.0.1 /Admin/User/check_verify?code=68
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004880s ]
+
+[ 2017-11-09T14:50:05+08:00 ] 127.0.0.1 /Admin/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000597s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0134s ]
+SQL: SHOW COLUMNS FROM `login_failed` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `login_failed` WHERE ( email = 'admin@qq.com' and ip = '127.0.0.1' ) LIMIT 1   [ RunTime:0.0035s ]
+SQL: SELECT * FROM `user` WHERE `email` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: user C:\laragon\www\car\Application\Admin\Controller\UserController.class.php 第 68 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000624s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000690s ]
+
+[ 2017-11-09T14:50:05+08:00 ] 127.0.0.1 /Admin/Index/index
+ERR: 系统不支持:memcached
+

@@ -1,0 +1,158 @@
+[ 2017-11-08T00:03:50+08:00 ] 127.0.0.1 /Admin/Admin/Shop
+ERR: 无法加载控制器:Admin
+
+[ 2017-11-08T10:35:28+08:00 ] 127.0.0.1 /Admin/Admin/Shop
+ERR: 无法加载控制器:Admin
+
+[ 2017-11-08T10:35:33+08:00 ] 127.0.0.1 /Admin/auth/System
+ERR: 非法操作:System
+
+[ 2017-11-08T10:36:17+08:00 ] 127.0.0.1 /Admin/Admin/Shop
+ERR: 无法加载控制器:Admin
+
+[ 2017-11-08T10:43:43+08:00 ] 127.0.0.1 /Admin/Admin/Shop
+ERR: 无法加载控制器:Admin
+
+[ 2017-11-08T10:43:47+08:00 ] 127.0.0.1 /Admin/auth/System
+ERR: 非法操作:System
+
+[ 2017-11-08T10:43:53+08:00 ] 127.0.0.1 /Admin/auth/System
+ERR: 非法操作:System
+
+[ 2017-11-08T10:53:20+08:00 ] 127.0.0.1 /Admin/Auth/user_index
+ERR: 模板不存在:./Application/Admin/View/Auth/user_index.html
+
+[ 2017-11-08T10:56:56+08:00 ] 127.0.0.1 /Admin/Auth/user_index
+ERR: 模板不存在:./Application/Admin/View/Auth/user_index.html
+
+[ 2017-11-08T11:02:35+08:00 ] 127.0.0.1 /Admin/User/check_verify?code=48
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+
+[ 2017-11-08T11:02:35+08:00 ] 127.0.0.1 /Admin/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000636s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `login_failed` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `login_failed` WHERE ( email = 'admin@qq.com' and ip = '127.0.0.1' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `user` WHERE `email` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `login_failed` WHERE ( email = 'admin@qq.com' and ip = '127.0.0.1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `login_failed` SET `login_at`='1510110155',`error_times`='1' WHERE `id` = 1 [ RunTime:0.0019s ]
+
+[ 2017-11-08T11:02:45+08:00 ] 127.0.0.1 /Admin/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000800s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001251s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `login_failed` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `login_failed` WHERE ( email = 'admin@qq.com' and ip = '127.0.0.1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE `email` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000729s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000835s ]
+
+[ 2017-11-08T11:03:05+08:00 ] 127.0.0.1 /Admin/User/check_verify?code=21
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000808s ]
+
+[ 2017-11-08T11:03:05+08:00 ] 127.0.0.1 /Admin/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000631s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `login_failed` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `login_failed` WHERE ( email = 'admin@qq.com' and ip = '127.0.0.1' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `user` WHERE `email` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000481s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000534s ]
+
+[ 2017-11-08T11:03:30+08:00 ] 127.0.0.1 /Admin/User/check_verify?code=56
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001276s ]
+
+[ 2017-11-08T11:03:32+08:00 ] 127.0.0.1 /Admin/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000638s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `login_failed` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `login_failed` WHERE ( email = 'admin@qq.com' and ip = '127.0.0.1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE `email` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000475s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000525s ]
+
+[ 2017-11-08T11:07:44+08:00 ] 127.0.0.1 /Admin/User/check_verify?code=22
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000760s ]
+
+[ 2017-11-08T11:07:44+08:00 ] 127.0.0.1 /Admin/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `login_failed` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `login_failed` WHERE ( email = 'admin@qq.com' and ip = '127.0.0.1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE `email` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000558s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000611s ]
+
+[ 2017-11-08T12:16:02+08:00 ] 127.0.0.1 /Admin/User/check_verify?code=08
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000627s ]
+
+[ 2017-11-08T12:16:02+08:00 ] 127.0.0.1 /Admin/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `login_failed` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `login_failed` WHERE ( email = 'admin@qq.com' and ip = '127.0.0.1' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `user` WHERE `email` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000479s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000530s ]
+
+[ 2017-11-08T14:33:09+08:00 ] 127.0.0.1 /Admin/Auth/group_index
+ERR: syntax error, unexpected '$data' (T_VARIABLE), expecting function (T_FUNCTION) or const (T_CONST)
+
+[ 2017-11-08T14:33:16+08:00 ] 127.0.0.1 /Admin/Auth/group_index
+ERR: syntax error, unexpected '$data' (T_VARIABLE), expecting function (T_FUNCTION) or const (T_CONST)
+
+[ 2017-11-08T15:02:04+08:00 ] 127.0.0.1 /Admin/User/check_verify?code=0
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001235s ]
+
+[ 2017-11-08T15:02:04+08:00 ] 127.0.0.1 /Admin/User/check_verify?code=09
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001256s ]
+
+[ 2017-11-08T15:02:04+08:00 ] 127.0.0.1 /Admin/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `login_failed` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `login_failed` WHERE ( email = 'admin@qq.com' and ip = '127.0.0.1' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `user` WHERE `email` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user C:\laragon\www\car\Application\Admin\Controller\UserController.class.php 第 68 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000463s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000512s ]
+
+[ 2017-11-08T15:06:10+08:00 ] 127.0.0.1 /Admin/Admin/Shop
+ERR: 无法加载控制器:Admin
+
+[ 2017-11-08T15:06:21+08:00 ] 127.0.0.1 /Admin/auth/System
+ERR: 非法操作:System
+

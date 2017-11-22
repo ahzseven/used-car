@@ -45,17 +45,17 @@ class AuthController extends CommonController
             // 创建基于主键的数组引用
             $refer = [];
             foreach ($list as $key => $data) {
-                $refer[$data[$id]] =& $list[$key];
+                $refer[$data[$id]] = &$list[$key];
             }
             foreach ($list as $key => $data) {
                 // 判断是否存在parent
                 $parentId = $data[$pid];
                 if ($root == $parentId) {
-                    $tree[] =& $list[$key];
+                    $tree[] = &$list[$key];
                 } else {
                     if (isset($refer[$parentId])) {
-                        $parent =& $refer[$parentId];
-                        $parent[$child][] =& $list[$key];
+                        $parent = &$refer[$parentId];
+                        $parent[$child][] = &$list[$key];
                     }
                 }
             }
@@ -145,7 +145,7 @@ class AuthController extends CommonController
             $data = $this->group->find($id);
             $rules = explode(",", $data['rules']);   // 拆分为一个数组
             $this->assign("rules", $rules);
-            $this->assign("id", $id);
+            $this->assign("data", $data);
         }
 
         $this->display();
@@ -175,6 +175,10 @@ class AuthController extends CommonController
     // 用户管理列表
     public function user_index()
     {
+        $user = M("User");
+        $data = $user->select();
+        $this->assign('list', $data);
+
         $this->display();
     }
 }

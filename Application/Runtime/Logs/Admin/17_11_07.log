@@ -31,3 +31,18 @@ ERR: 1054:Unknown column 'uid' in 'field list'
 [ 2017-11-07T13:40:12+08:00 ] 127.0.0.1 /Admin/Index/index
 ERR: 系统不支持:memcached
 
+[ 2017-11-07T23:37:03+08:00 ] 127.0.0.1 /Admin/Index/index
+ERR: syntax error, unexpected '[', expecting '('
+
+[ 2017-11-07T23:38:19+08:00 ] 127.0.0.1 /Admin/Index/index
+ERR: syntax error, unexpected '"]); ?>"' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';'
+
+[ 2017-11-07T23:48:32+08:00 ] 127.0.0.1 /Admin/Index/index
+ERR: syntax error, unexpected '[', expecting '('
+
+[ 2017-11-07T23:51:53+08:00 ] 127.0.0.1 /Admin/Admin/Shop
+ERR: 无法加载控制器:Admin
+
+[ 2017-11-07T23:52:57+08:00 ] 127.0.0.1 /Admin/Index/index
+ERR: syntax error, unexpected ':'
+

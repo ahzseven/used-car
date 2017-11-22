@@ -50,28 +50,15 @@
 <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
     <div class="am-offcanvas-bar admin-offcanvas-bar">
         <ul class="am-list admin-sidebar-list">
-            <li><a href="<?php echo U('Admin/Index/index');?>"><span class="am-icon-home"></span> 首页</a></li>
-            <li class="admin-parent">
-                <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 商城管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
-                <ul class="am-list am-collapse admin-sidebar-sub" id="collapse-nav">
-                    <li><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span> 个人资料<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
-                    <li><a href="admin-help.html"><span class="am-icon-puzzle-piece"></span> 帮助页</a></li>
-                    <li><a href="admin-gallery.html"><span class="am-icon-th"></span> 相册页面<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
-                    <li><a href="admin-log.html"><span class="am-icon-calendar"></span> 系统日志</a></li>
-                    <li><a href="admin-404.html"><span class="am-icon-bug"></span> 404</a></li>
+            <!--循环一级导航菜单-->
+            <?php if(is_array($menus)): $i = 0; $__LIST__ = $menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><li class="admin-parent">
+                <a href="<?php echo U($menu['name']);?>" class="am-cf" data-am-collapse="{target: '#collapse-<?php echo ($menu["id"]); ?>'}"><span class="am-icon-file"></span> <?php echo ($menu["title"]); ?> <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                <ul class="am-list admin-sidebar-sub am-collapse am-in" id="collapse-<?php echo ($menu["id"]); ?>">
+                    <!--循环二级导航菜单-->
+                    <?php if(is_array($menu["children"])): $i = 0; $__LIST__ = $menu["children"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U($vo['name']);?>"><span class="am-icon-th"></span> <?php echo ($vo["title"]); ?> </a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+
                 </ul>
-            </li>
-            <li class="admin-parent">
-                <a class="am-cf" data-am-collapse="{target: '#collapse-nav-1'}"><span class="am-icon-file"></span> 系统管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
-                <ul class="am-list am-collapse admin-sidebar-sub" id="collapse-nav-1">
-                    <li><a href="<?php echo U('Admin/Auth/rule_index');?>"><span class="am-icon-th"></span> 权限管理<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
-                    <li><a href="<?php echo U('Admin/Auth/group_index');?>"><span class="am-icon-calendar"></span> 用户组管理</a></li>
-                    <li><a href="<?php echo U('Admin/User/index');?>"><span class="am-icon-bug"></span> 用户管理</a></li>
-                </ul>
-            </li>
-            <!--<li><a href="admin-table.html"><span class="am-icon-table"></span> 表格</a></li>-->
-            <!--<li><a href="admin-form.html"><span class="am-icon-pencil-square-o"></span> 表单</a></li>-->
-            <!--<li><a href="#"><span class="am-icon-sign-out"></span> 注销</a></li>-->
+            </li><?php endforeach; endif; else: echo "" ;endif; ?>
         </ul>
 
         <div class="am-panel am-panel-default admin-sidebar-panel">
@@ -111,14 +98,14 @@
 
                 <div class="am-tab-panel">
                     <form class="am-form " action="<?php echo U('Admin/Auth/group_update');?>" method="post">
-                        <input type="hidden" name="id" value="<?php echo ($id); ?>">
+                        <input type="hidden" name="id" value="<?php echo ($data["id"]); ?>">
 
                         <div class="am-g am-margin-top">
                             <div class="am-u-sm-4 am-u-md-2 am-text-right">
                                 用户组名
                             </div>
                             <div class="am-u-sm-8 am-u-md-4 am-u-end col-end">
-                                <input type="text" class="am-input-sm" name="title" placeholder="请输入用户组名">
+                                <input type="text" class="am-input-sm" name="title" value="<?php echo ($data["title"]); ?>">
                             </div>
                         </div>
 

@@ -1,0 +1,36 @@
+[ 2017-11-13T11:04:25+08:00 ] 127.0.0.1 /Admin/User/check_verify?code=61
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001226s ]
+
+[ 2017-11-13T11:04:25+08:00 ] 127.0.0.1 /Admin/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000861s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `login_failed` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `login_failed` WHERE ( email = 'admin@qq.com' and ip = '127.0.0.1' ) LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `user` WHERE `email` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: user C:\laragon\www\car\Application\Admin\Controller\UserController.class.php 第 69 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000647s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000712s ]
+
+[ 2017-11-13T11:24:01+08:00 ] 127.0.0.1 /Admin/User/check_verify?code=97
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001527s ]
+
+[ 2017-11-13T11:24:02+08:00 ] 127.0.0.1 /Admin/User/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000805s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `login_failed` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `login_failed` WHERE ( email = 'admin@qq.com' and ip = '127.0.0.1' ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user` WHERE `email` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: user C:\laragon\www\car\Application\Admin\Controller\UserController.class.php 第 69 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000652s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000716s ]
+

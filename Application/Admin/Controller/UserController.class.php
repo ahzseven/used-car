@@ -19,6 +19,7 @@ class UserController extends Controller
 //        }
 //        $this->redirect("Index/index");
     }
+
     /**
      * 登录验证
      */
@@ -64,6 +65,10 @@ class UserController extends Controller
 
             // 设置session
             $_SESSION['user'] = $user;
+            //是超级管理员给个标识
+            if($user['user']['name'] == C('AUTH_CONFIG.AUTH_SUPER')){
+                $_SESSION['user']['isadmin']=1;
+            }
             return;
         }
 
@@ -98,9 +103,9 @@ class UserController extends Controller
     public function register()
     {
         if (IS_POST) {
-            $data['name'] = I("post.name");
-            $data['email'] = I("post.email");
-            $data['phone'] = I("post.phone");
+            $data['name']     = I("post.name");
+            $data['email']    = I("post.email");
+            $data['phone']    = I("post.phone");
             $data['password'] = I("post.password");
 
             $user = M("user");
@@ -150,8 +155,11 @@ class UserController extends Controller
      */
     public function logout()
     {
-        //清除session
-        $_SESSION = array();
+        //清除session和cookie
+        $_SESSION=array();
+        if(isset($_COOKIE['token'])) {
+            setcookie('token', "", time()-3600, "/");
+        }
         session_destroy();
 
         $this->redirect('Admin/User/login');
